@@ -49,10 +49,10 @@ console.log(submissions);
 
 function findSubmissionByName(array, name) {
   const found = array.find((array) => array.name === name);
-  console.log(found);
+  return found;
 }
 
-findSubmissionByName(submissions, "Jill");
+console.log(findSubmissionByName(submissions, "Jill"));
 
 function findLowestScore(array) {
     let downBad = array.score;
