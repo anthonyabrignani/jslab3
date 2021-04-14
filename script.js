@@ -40,7 +40,7 @@ console.log(submissions);
 
 function editSubmission(array, index, score) {
   array[index].score = score;
-  array[index].passed = score >= 60 ? true:false;
+  array[index].passed = score >= 60 ? true : false;
 }
 
 editSubmission(submissions, 2, 99);
@@ -55,10 +55,10 @@ function findSubmissionByName(array, name) {
 console.log(findSubmissionByName(submissions, "Jill"));
 
 function findLowestScore(array) {
-    let downBad = array[0];
+  let downBad = array[0];
   array.forEach(function (submission) {
     if (downBad.score > submissions.score) {
-    downBad = submissions;
+      downBad = submissions;
     }
   });
   return downBad;
@@ -67,12 +67,13 @@ function findLowestScore(array) {
 console.log(findLowestScore(submissions));
 
 function findAverageScore(array) {
-    let total = 0;
-    let average;
-    for (let submission of array) {
-        total += submission.score
-    } average = total / array.length;
-    return average;
+  let total = 0;
+  let average;
+  for (let submission of array) {
+    total += submission.score;
+  }
+  average = total / array.length;
+  return average;
 }
 
 console.log(findAverageScore(submissions));
@@ -90,20 +91,3 @@ function filter90AndAbove(array) {
 }
 
 filter90AndAbove(submissions);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
