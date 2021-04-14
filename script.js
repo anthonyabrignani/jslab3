@@ -5,6 +5,8 @@ const submissions = [
   { name: "Jill", score: 88, date: "2020-04-22", passed: true },
 ];
 
+console.log(submissions);
+
 function addSubmission(array, newName, newScore, newDate) {
   array.push({
     name: newName,
@@ -15,7 +17,9 @@ function addSubmission(array, newName, newScore, newDate) {
 }
 
 addSubmission(submissions, "Jon", 68, "2020-03-30");
-addSubmission(submissions, "Jesse", 75, "2019-07-21");
+addSubmission(submissions, "Jesse", 91, "2019-07-21");
+
+console.log(submissions);
 
 function deleteSubmissionByIndex(array, index) {
   array.splice(index, 1);
@@ -23,36 +27,56 @@ function deleteSubmissionByIndex(array, index) {
 
 deleteSubmissionByIndex(submissions, 0);
 
+console.log(submissions);
+
 function deleteSubmissionByName(array, name) {
-    const deleted = array.findIndex(array => array.name === name);
-    array.splice(deleted, 1);
+  const deleted = array.findIndex((array) => array.name === name);
+  array.splice(deleted, 1);
 }
 
-deleteSubmissionByName(submissions, "Jill");
+deleteSubmissionByName(submissions, "Joe");
 
-function editSubmission(array, index, score) {} // use conditionals
+console.log(submissions);
+
+function editSubmission(array, index, score) {
+  const scoreEdit = array.findIndex((array) => array.index === index);
+  if (index) array.splice(scoreEdit, 1, score);
+} // use conditionals
+
+// editSubmission(submissions, 2, 99);
+
+console.log(submissions);
 
 function findSubmissionByName(array, name) {
-    const found = array.find(array => array.name === name);
-    console.log(found);
+  const found = array.find((array) => array.name === name);
+  console.log(found);
 }
 
 findSubmissionByName(submissions, "Jill");
 
-function findLowestScore(array) {} // use forEach
+function findLowestScore(array) {
+    let downBad = array.score;
+  array.forEach(function (lowest) {
+    if (downBad > lowest) downBad = lowest;
+  });
+  console.log(downBad);
+} // use forEach
 
-function findAverageScore(array) {} // use for of loop
+findLowestScore(submissions);
+
+function findAverageScore(array) {}
+// use for of loop
 
 function filterPassing(array) {
-    const passing = array.filter(array => array.score >= 60);
-    console.log(passing);
+  const passing = array.filter((array) => array.score >= 60);
+  console.log(passing);
 }
 
 filterPassing(submissions);
 
 function filter90AndAbove(array) {
-    const highGrades = array.filter(array => array.score >= 90);
-    console.log(highGrades);
+  const highGrades = array.filter((array) => array.score >= 90);
+  console.log(highGrades);
 }
 
 filter90AndAbove(submissions);
