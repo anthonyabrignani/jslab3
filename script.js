@@ -39,11 +39,11 @@ deleteSubmissionByName(submissions, "Joe");
 console.log(submissions);
 
 function editSubmission(array, index, score) {
-  const scoreEdit = array.findIndex((array) => array.index === index);
-  if (index) array.splice(scoreEdit, 1, score);
-} // use conditionals
+  array[index].score = score;
+  array[index].passed = score >= 60 ? true:false;
+}
 
-// editSubmission(submissions, 2, 99);
+editSubmission(submissions, 2, 99);
 
 console.log(submissions);
 
@@ -80,3 +80,20 @@ function filter90AndAbove(array) {
 }
 
 filter90AndAbove(submissions);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
