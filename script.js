@@ -24,24 +24,35 @@ function deleteSubmissionByIndex(array, index) {
 deleteSubmissionByIndex(submissions, 0);
 
 function deleteSubmissionByName(array, name) {
-    const found = array.findIndex(array => array.name === name);
-    array.splice(found, 1);
+    const deleted = array.findIndex(array => array.name === name);
+    array.splice(deleted, 1);
 }
 
 deleteSubmissionByName(submissions, "Jill");
 
 function editSubmission(array, index, score) {} // use conditionals
 
-function findSubmissionByName(array, name) {} // use find method
+function findSubmissionByName(array, name) {
+    const found = array.find(array => array.name === name);
+    console.log(found);
+}
+
+findSubmissionByName(submissions, "Jill");
 
 function findLowestScore(array) {} // use forEach
 
-findLowestScore(submissions);
-
 function findAverageScore(array) {} // use for of loop
 
-function filterPassing(array) {} // use filter
+function filterPassing(array) {
+    const passing = array.filter(array => array.score >= 60);
+    console.log(passing);
+}
 
-function filter90AndAbove(array) {} // use filter
+filterPassing(submissions);
 
-console.log(submissions);
+function filter90AndAbove(array) {
+    const highGrades = array.filter(array => array.score >= 90);
+    console.log(highGrades);
+}
+
+filter90AndAbove(submissions);
