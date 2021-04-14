@@ -15,25 +15,33 @@ function addSubmission(array, newName, newScore, newDate) {
 }
 
 addSubmission(submissions, "Jon", 68, "2020-03-30");
+addSubmission(submissions, "Jesse", 75, "2019-07-21");
 
 function deleteSubmissionByIndex(array, index) {
   array.splice(index, 1);
 }
 
-deleteSubmissionByIndex(submissions, 1);
+deleteSubmissionByIndex(submissions, 0);
 
-function deleteSubmissionByName(array, name) {}
+function deleteSubmissionByName(array, name) {
+    const found = array.findIndex(array => array.name === name);
+    array.splice(found, 1);
+}
 
-function editSubmission(array, index, score) {}
+deleteSubmissionByName(submissions, "Jill");
 
-function findSubmissionByName(array, name) {}
+function editSubmission(array, index, score) {} // use conditionals
 
-function findLowestScore(array) {}
+function findSubmissionByName(array, name) {} // use find method
 
-function findAverageScore(array) {}
+function findLowestScore(array) {} // use forEach
 
-function filterPassing(array) {}
+findLowestScore(submissions);
 
-function filterAndAbove(array) {}
+function findAverageScore(array) {} // use for of loop
+
+function filterPassing(array) {} // use filter
+
+function filter90AndAbove(array) {} // use filter
 
 console.log(submissions);
