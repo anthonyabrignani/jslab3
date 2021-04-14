@@ -79,15 +79,13 @@ function findAverageScore(array) {
 console.log(findAverageScore(submissions));
 
 function filterPassing(array) {
-  const passing = array.filter((array) => array.score >= 60);
-  console.log(passing);
+  return array.filter((array) => array.score >= 60);
 }
 
-filterPassing(submissions);
+console.log(filterPassing(submissions));
 
 function filter90AndAbove(array) {
-  const highGrades = array.filter((array) => array.score >= 90);
-  console.log(highGrades);
+  return array.filter((array) => array.score >= 90);
 }
 
-filter90AndAbove(submissions);
+console.log(filter90AndAbove(submissions));
