@@ -69,8 +69,8 @@ console.log(findLowestScore(submissions));
 function findAverageScore(array) {
     let total = 0;
     let average;
-    for (let num of array) {
-        total += num.score
+    for (let submission of array) {
+        total += submission.score
     } average = total / array.length;
     return average;
 }
