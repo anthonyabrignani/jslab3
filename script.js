@@ -55,14 +55,16 @@ function findSubmissionByName(array, name) {
 console.log(findSubmissionByName(submissions, "Jill"));
 
 function findLowestScore(array) {
-    let downBad = array.score;
-  array.forEach(function (lowest) {
-    if (downBad > lowest) downBad = lowest;
+    let downBad = array[0];
+  array.forEach(function (submission) {
+    if (downBad.score > submissions.score) {
+    downBad = submissions;
+    }
   });
-  console.log(downBad);
-} // use forEach
+  return downBad;
+}
 
-findLowestScore(submissions);
+console.log(findLowestScore(submissions));
 
 function findAverageScore(array) {}
 // use for of loop
