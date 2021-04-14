@@ -66,8 +66,16 @@ function findLowestScore(array) {
 
 console.log(findLowestScore(submissions));
 
-function findAverageScore(array) {}
-// use for of loop
+function findAverageScore(array) {
+    let total = 0;
+    let average;
+    for (let num of array) {
+        total += num.score
+    } average = total / array.length;
+    return average;
+}
+
+console.log(findAverageScore(submissions));
 
 function filterPassing(array) {
   const passing = array.filter((array) => array.score >= 60);
